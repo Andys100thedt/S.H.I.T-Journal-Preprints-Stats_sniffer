@@ -4,24 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b272ad96-1628-469c-84d1-52e2c390fcb4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/project.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shit_transfer.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_daemon.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/enumerate_configuration.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/env_playground.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lifecycle.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/post_processing.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/post_processing/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/post_processing/post_playground.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/post_processing/post_processing_utils.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/post_processing/stat_accumu.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/result_algorithm.py" afterDir="false" />
+    <list default="true" id="b272ad96-1628-469c-84d1-52e2c390fcb4" name="Changes" comment="init.&#10;source uploaded">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,6 +22,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "Andys100thedt"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/Andys100thedt/SHIT-Journal-Preprints-Stats_sniffer.git",
+    "accountId": "b97d4eee-e03f-4239-826d-60b71e0a40f8"
+  }
+}]]></component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 6
 }</component>
@@ -214,6 +210,19 @@
       <option name="presentableId" value="Default" />
       <updated>1772180412013</updated>
     </task>
+    <task id="LOCAL-00001" summary="init.&#10;source uploaded">
+      <option name="closed" value="true" />
+      <created>1772265434024</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1772265434024</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="init.&#10;source uploaded" />
+    <option name="LAST_COMMIT_MESSAGE" value="init.&#10;source uploaded" />
   </component>
 </project>
