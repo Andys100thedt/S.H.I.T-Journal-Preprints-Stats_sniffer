@@ -4,8 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b272ad96-1628-469c-84d1-52e2c390fcb4" name="Changes" comment="Env setup&#10;feat. makes the env_playground.py generating all necessary files">
+    <list default="true" id="b272ad96-1628-469c-84d1-52e2c390fcb4" name="Changes" comment="Typos&#10;fix. fixed and corrected some typos and spelling issues in README.md">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/post_processing/post_playground.py" beforeDir="false" afterPath="$PROJECT_DIR$/post_processing/post_playground.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/post_processing/post_processing_utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/post_processing/post_processing_utils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/result_algorithm.py" beforeDir="false" afterPath="$PROJECT_DIR$/result_algorithm.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -226,12 +229,21 @@
       <option name="project" value="LOCAL" />
       <updated>1772267554227</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Typos&#10;fix. fixed and corrected some typos and spelling issues in README.md">
+      <option name="closed" value="true" />
+      <created>1772288093998</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1772288093998</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="init.&#10;source uploaded" />
     <MESSAGE value="Env setup&#10;feat. makes the env_playground.py generating all necessary files" />
-    <option name="LAST_COMMIT_MESSAGE" value="Env setup&#10;feat. makes the env_playground.py generating all necessary files" />
+    <MESSAGE value="Typos&#10;fix. fixed and corrected some typos and spelling issues in README.md" />
+    <option name="LAST_COMMIT_MESSAGE" value="Typos&#10;fix. fixed and corrected some typos and spelling issues in README.md" />
   </component>
 </project>

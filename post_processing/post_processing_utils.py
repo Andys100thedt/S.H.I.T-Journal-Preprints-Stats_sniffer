@@ -38,7 +38,7 @@ def jump_rate(sorted_dataflow: list[StatFrame]) -> float:
     total_jump = 0.0
     latest_jump = 0
     for i in range(1, len(sorted_dataflow)):
-        jump = abs(sorted_dataflow[i].score_plain - sorted_dataflow[i - 1].score_plain)
+        jump = sorted_dataflow[i].score_plain - sorted_dataflow[i - 1].score_plain
         total_jump += jump
         if jump > 0:
             latest_jump = sorted_dataflow[i].timestamp

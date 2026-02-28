@@ -40,10 +40,11 @@ def id_str4id_idx(path: str,id_idx: int) -> str:
     return list(result_db.database.keys())[id_idx]
 
 if __name__ == "__main__":
-    db_path = "../stats/result_database_o_-1_cp_1772264113.1902297.bin"
+    db_path = "../stats/result_database_o_-1_cp_1772290747.034636.bin"
     #flow_examination("0928f19e-927f-4bd5-ad22-1bc4a9f3e37f")
     plot_results_snapshot(db_path)
     print(id_str4id_idx(db_path, 0))
+    print(id_str4id_idx(db_path, 5))
     print(id_str4id_idx(db_path, 6))
     print(id_str4id_idx(db_path, 9))
     print(id_str4id_idx(db_path, 22))

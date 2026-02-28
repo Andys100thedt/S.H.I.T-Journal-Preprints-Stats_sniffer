@@ -4,7 +4,7 @@ import pickle
 from post_processing.stat_accumu import IntegratedDataset, IntegratedStatClue, StatResultDatabase, IntegratedStatResult
 
 if __name__ == "__main__":
-    path = "stats/integrated_dataset_o_-1_cp_1772264113.1902297.bin"
+    path = "stats/integrated_dataset_o_-1_cp_1772290747.034636.bin"
     with open(path,'rb') as dataset:
         integration_set: IntegratedDataset = pickle.load(dataset)
     result_database: StatResultDatabase = StatResultDatabase({})
