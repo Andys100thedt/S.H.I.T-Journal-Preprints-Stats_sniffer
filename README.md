@@ -27,11 +27,11 @@ A project to consistently update statistics and discover the most interesting pr
 1. **Setup your environment**
    - Make sure you have Python installed (also see requirements).
    - Configure `enumerate_configuration.py` if you will.
-   - Add a environment variable "SHIT_API_KEY" in your system's environment, apikey could be found using your own 《SHIT》 accont and by packet analysis.
+   - Add an environment variable "SHIT_API_KEY" in your system's environment, apikey could be found using your own 《SHIT》 account and by packet analysis.
    - *or you can however just directly code your key string into the configuration, who cares except yourself*
 
 2. **Run the Stats Sniffer**
-   - Before starting: run `env_playground.py` to generate initiallized dataset files required for the rest parts of the project
+   - Before starting: run `env_playground.py` to generate initialized dataset files required for the rest parts of the project
    - Typical entry point: `_daemon.py`  
      ```
      python _daemon.py
@@ -43,17 +43,17 @@ A project to consistently update statistics and discover the most interesting pr
    - For testing or experiments, use `env_playground.py` and `post_processing/post_playground.py`.
 
 5. **Output Structure**
-   - `lifecycle.py`: attach newest data captured when running and attach them to `/stats/dataset.bin`(binary raw dataset) and `/stats/meta-id-refmap`(json map |id_str|->|metadata dict|)
-   - `post_processing.py`: reads all data in dataset.bin and calculating staticstical metrics for each preprint subject. Result stored in `/stats/integrated_dataset_0_-1_cp_${time.time()}.bin`
-   - `result_algorithm.py`: reads the output file of `post_processing.py` specified by file-scoped variable `path` decleared **MANUALLY**(which means to you have to change it overtime), saves a similar file with `post_processing.py`
-   - Results would be able to visuallize when the output of `result_algorithm.py` was specified in `post_processing/post_playround.py`.
+   - `lifecycle.py`: attach the newest data captured when running and attach them to `/stats/dataset.bin`(binary raw dataset) and `/stats/meta-id-refmap`(.json map |id_str|->|metadata dict|)
+   - `post_processing.py`: reads all data in dataset.bin and calculating statistical metrics for each preprint subject. Result stored in `/stats/integrated_dataset_0_-1_cp_${time.time()}.bin`
+   - `result_algorithm.py`: reads the output file of `post_processing.py` specified by file-scoped variable `path` declared **MANUALLY**(which means to you have to change it overtime), saves a similar file with `post_processing.py`
+   - Results would be able to visualize when the output of `result_algorithm.py` was specified in `post_processing/post_playround.py`.
    - Explore the project to figure out more.
 
 6. **Configuration**
    - `interval: float`: interval between each `lifecycle.py` logs and write records of data into the file; default: 60*5 sec
-   - `lifecycle: float`: length of period for `_daemon.py` to restart `lifecycle.py` in order to avoid incresingly high memory usage; default: 1200 sec
+   - `lifecycle: float`: length of period for `_daemon.py` to restart `lifecycle.py` in order to avoid increasingly high memory usage; default: 1200 sec
    - `datetime_critical: float`: threshold for `post_processing.py` but not `lifecycle.py` to reject preprints which are published too early; default: before 00.00 UTC+8 Saturday of the last week when the configuration is loaded
-   - `limitN: int`: an parameter passed onto api call about how much pieces of priprints' data you are going to fetch in a single call; default: 99999 (this should be large)
+   - `limitN: int`: a parameter passed onto api call about how much pieces of preprints' data you are going to fetch in a single call; default: 99999 (this should be large)
    - `count_threshold: int`: threshold of `latest_rated_count` for `post_processing.py` but not `lifecycle.py` to reject preprints with few people rated, less than but not included; default: 6
    - `apikey: str, headers: dict`: parameters passed onto api call;
 

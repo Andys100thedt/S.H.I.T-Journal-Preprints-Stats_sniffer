@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b272ad96-1628-469c-84d1-52e2c390fcb4" name="Changes" comment="init.&#10;source uploaded">
+    <list default="true" id="b272ad96-1628-469c-84d1-52e2c390fcb4" name="Changes" comment="Env setup&#10;feat. makes the env_playground.py generating all necessary files">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -218,11 +218,20 @@
       <option name="project" value="LOCAL" />
       <updated>1772265434024</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Env setup&#10;feat. makes the env_playground.py generating all necessary files">
+      <option name="closed" value="true" />
+      <created>1772267554227</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1772267554227</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="init.&#10;source uploaded" />
-    <option name="LAST_COMMIT_MESSAGE" value="init.&#10;source uploaded" />
+    <MESSAGE value="Env setup&#10;feat. makes the env_playground.py generating all necessary files" />
+    <option name="LAST_COMMIT_MESSAGE" value="Env setup&#10;feat. makes the env_playground.py generating all necessary files" />
   </component>
 </project>
