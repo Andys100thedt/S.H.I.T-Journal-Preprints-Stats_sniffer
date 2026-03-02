@@ -4,10 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b272ad96-1628-469c-84d1-52e2c390fcb4" name="Changes" comment="Typos&#10;fix. fixed and corrected some typos and spelling issues in README.md">
+    <list default="true" id="b272ad96-1628-469c-84d1-52e2c390fcb4" name="Changes" comment="Jump rate algorithm&#10;fix. fixed a bug causing jump rate calculation counts not only increment but also decrement as positive.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/enumerate_configuration.py" beforeDir="false" afterPath="$PROJECT_DIR$/enumerate_configuration.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/env_playground.py" beforeDir="false" afterPath="$PROJECT_DIR$/env_playground.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lifecycle.py" beforeDir="false" afterPath="$PROJECT_DIR$/lifecycle.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/post_processing.py" beforeDir="false" afterPath="$PROJECT_DIR$/post_processing.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/post_processing/post_playground.py" beforeDir="false" afterPath="$PROJECT_DIR$/post_processing/post_playground.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/post_processing/post_processing_utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/post_processing/post_processing_utils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/post_processing/stat_accumu.py" beforeDir="false" afterPath="$PROJECT_DIR$/post_processing/stat_accumu.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/result_algorithm.py" beforeDir="false" afterPath="$PROJECT_DIR$/result_algorithm.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -25,18 +30,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "Andys100thedt"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Andys100thedt&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/Andys100thedt/SHIT-Journal-Preprints-Stats_sniffer.git",
-    "accountId": "b97d4eee-e03f-4239-826d-60b71e0a40f8"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Andys100thedt/SHIT-Journal-Preprints-Stats_sniffer.git&quot;,
+    &quot;accountId&quot;: &quot;b97d4eee-e03f-4239-826d-60b71e0a40f8&quot;
   }
-}]]></component>
+}</component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 6
 }</component>
@@ -45,26 +50,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "Python._daemon (1).executor": "Run",
-    "Python._daemon.executor": "Run",
-    "Python.daemon.executor": "Run",
-    "Python.env_playground.executor": "Run",
-    "Python.lifecycle.executor": "Run",
-    "Python.post_playground.executor": "Run",
-    "Python.post_processing (1).executor": "Run",
-    "Python.post_processing.executor": "Run",
-    "Python.result_algorithm.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "master",
-    "settings.editor.selected.configurable": "preferences.keymap"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;Python._daemon (1).executor&quot;: &quot;Run&quot;,
+    &quot;Python._daemon.executor&quot;: &quot;Run&quot;,
+    &quot;Python.daemon.executor&quot;: &quot;Run&quot;,
+    &quot;Python.env_playground.executor&quot;: &quot;Run&quot;,
+    &quot;Python.lifecycle.executor&quot;: &quot;Run&quot;,
+    &quot;Python.post_playground.executor&quot;: &quot;Run&quot;,
+    &quot;Python.post_processing (1).executor&quot;: &quot;Run&quot;,
+    &quot;Python.post_processing.executor&quot;: &quot;Run&quot;,
+    &quot;Python.result_algorithm.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\meow\shit_transfer" />
@@ -193,8 +198,8 @@
         <item itemvalue="Python.post_playground" />
         <item itemvalue="Python.result_algorithm" />
         <item itemvalue="Python.post_processing" />
-        <item itemvalue="Python._daemon" />
         <item itemvalue="Python.env_playground" />
+        <item itemvalue="Python._daemon" />
       </list>
     </recent_temporary>
   </component>
@@ -237,13 +242,22 @@
       <option name="project" value="LOCAL" />
       <updated>1772288093998</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Jump rate algorithm&#10;fix. fixed a bug causing jump rate calculation counts not only increment but also decrement as positive.">
+      <option name="closed" value="true" />
+      <created>1772291252984</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1772291252984</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="init.&#10;source uploaded" />
     <MESSAGE value="Env setup&#10;feat. makes the env_playground.py generating all necessary files" />
     <MESSAGE value="Typos&#10;fix. fixed and corrected some typos and spelling issues in README.md" />
-    <option name="LAST_COMMIT_MESSAGE" value="Typos&#10;fix. fixed and corrected some typos and spelling issues in README.md" />
+    <MESSAGE value="Jump rate algorithm&#10;fix. fixed a bug causing jump rate calculation counts not only increment but also decrement as positive." />
+    <option name="LAST_COMMIT_MESSAGE" value="Jump rate algorithm&#10;fix. fixed a bug causing jump rate calculation counts not only increment but also decrement as positive." />
   </component>
 </project>

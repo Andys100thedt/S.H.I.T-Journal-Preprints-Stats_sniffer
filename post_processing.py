@@ -20,14 +20,20 @@ if __name__ == "__main__":
 
     ids: list = list(dataset.dataset.keys())
     for idx,preprint in enumerate(dataset.dataset.values()):
-        sorted_clamped_raw = clamp_and_sort(offset, preprint)
-        mse_weighted,mse_plain = time_weighted_mse(sorted_clamped_raw)
-        jump_rate_plain = jump_rate(sorted_clamped_raw)
 
-        if sorted_clamped_raw[-1].score_weighted == _STATIC_FRAME.score_weighted or sorted_clamped_raw[-1].rated_count < _DEFAULT_CONFIGURATION.count_threshold:
+        sorted_clamped_raw = clamp_and_sort(offset, preprint)
+        if sorted_clamped_raw[-1].rated_count < _DEFAULT_CONFIGURATION.count_threshold:
+            print("Rejected due to low rated count:",ids[idx])
+            continue
+        if ids[idx] not in refmap.keys():
+            print("Rejected due to missingno metainfo:", ids[idx])
             continue
         if iso8601_to_ts(refmap[ids[idx]]["created_at"]) <= _DEFAULT_CONFIGURATION.datetime_critical:
+            print("Rejected due to out-of-bound upload timing:", ids[idx])
             continue
+
+        mse_weighted, mse_plain, linear_offset = time_weighted_mse(sorted_clamped_raw)
+        jump_rate_plain = jump_rate(sorted_clamped_raw)
 
         clue_frame: IntegratedStatClue = IntegratedStatClue(
             sorted_clamped_raw[-1].score_plain,
@@ -35,7 +41,8 @@ if __name__ == "__main__":
             sorted_clamped_raw[-1].rated_count,
             mse_plain,
             mse_weighted,
-            jump_rate_plain
+            jump_rate_plain,
+            linear_offset
         )
         integrated_dataset.dataset.update({ids[idx]: clue_frame})
         print({ids[idx]: clue_frame})

@@ -4,7 +4,7 @@ import pickle
 from post_processing.stat_accumu import IntegratedDataset, IntegratedStatClue, StatResultDatabase, IntegratedStatResult
 
 if __name__ == "__main__":
-    path = "stats/integrated_dataset_o_-1_cp_1772290747.034636.bin"
+    path = "stats/integrated_dataset_o_-1_cp_1772454892.948831.bin"
     with open(path,'rb') as dataset:
         integration_set: IntegratedDataset = pickle.load(dataset)
     result_database: StatResultDatabase = StatResultDatabase({})
@@ -13,9 +13,23 @@ if __name__ == "__main__":
         preprint: IntegratedStatClue = integration_set.dataset[key]
 
         result: IntegratedStatResult = IntegratedStatResult(
-            preprint.jump_rate_plain*1e7*preprint.latest_score_weighted / math.log(preprint.latest_rated_count+1)+1,
-            math.log10(preprint.variation_weighted+2)*(1+preprint.jump_rate_plain*4e4)*math.log10(preprint.latest_rated_count-4.3) if preprint.variation_weighted >= 1e-07 else 0.0,
+            preprint.linear_offset,
+            math.log10(preprint.variation_weighted+2)*math.log10(preprint.latest_rated_count-4.3) if preprint.variation_weighted >= 1e-07 else 0.0,
             preprint.latest_score_weighted*math.log(preprint.latest_rated_count-3.8),
+        )
+        (result_database.database.update({key: result}))
+
+    max_hotness = max([stat.hotness for stat in result_database.database.values()])
+    max_controversy = max([stat.controversy for stat in result_database.database.values()])
+    controversy_scale_ratio = max_hotness / max_controversy
+
+    for idx,key in enumerate(result_database.database.keys()):
+        preprint: IntegratedStatResult = result_database.database[key]
+
+        result: IntegratedStatResult = IntegratedStatResult(
+            preprint.rising*100,
+            preprint.controversy*controversy_scale_ratio - preprint.hotness, # Differentially tuned controversy
+            preprint.hotness,
         )
         (result_database.database.update({key: result}))
         print(preprint)

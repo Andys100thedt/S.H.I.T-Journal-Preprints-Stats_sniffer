@@ -15,8 +15,11 @@ def update():
     payload = requests.get("https://bcgdqepzakcufaadgnda.supabase.co/rest/v1/preprints_with_ratings?",params=params,headers=_DEFAULT_CONFIGURATION.headers)
     content = payload.json()
 
+    """
     with open("stats/meta-id-refmap", 'r') as f:
         refmap: dict[str, dict] = json.loads(f.read())
+    """
+    refmap = {}
     with open("stats/dataset.bin", 'rb') as f:
         dataset: StatFlowDataset = pickle.load(f)
 
@@ -33,7 +36,7 @@ def update():
             preprint_rated_count,
         )
 
-        if preprint_id not in refmap: refmap.update({preprint_id: preprint_meta})  # once-initiated-meta-map
+        refmap.update({preprint_id: preprint_meta})  # updating-meta-map which captures preprints deleted or missingno
         if preprint_id not in dataset.dataset.keys():
             dataset.dataset.update({preprint_id: [preprint_stat_frame]})
         else:

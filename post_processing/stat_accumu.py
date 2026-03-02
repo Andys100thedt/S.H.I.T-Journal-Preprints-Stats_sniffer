@@ -19,6 +19,7 @@ class IntegratedStatClue:
     variation_plain: float
     variation_weighted: float
     jump_rate_plain: float
+    linear_offset: float
 
 @dataclasses.dataclass
 class IntegratedDataset:
@@ -39,4 +40,11 @@ _STATIC_FRAME = StatFrame(
     score_plain=0.0,
     score_weighted=3.7911405091200641,
     rated_count=0.0,
+)
+
+_MISSING_NO_STATIC_FRAME = StatFrame(
+    timestamp=-1,
+    score_plain=-1,
+    score_weighted=-1,
+    rated_count=-1,
 )

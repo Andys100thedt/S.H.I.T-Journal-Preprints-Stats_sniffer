@@ -1,10 +1,14 @@
-import numpy,time
+import numpy,time,sys
 
 from post_processing.stat_accumu import StatFrame,_STATIC_FRAME
 from enumerate_configuration import _DEFAULT_CONFIGURATION
+from scipy.optimize import curve_fit
+
+def target_log_func(x, a, b):
+    return  a*numpy.log(x)+b
 
 def deduce_capped_y(x,coefficients):
-    return numpy.polyval(coefficients,x)
+    return target_log_func(x,coefficients[0],coefficients[1])
 
 def time_weighted_mse(sorted_dataflow: list[StatFrame]) -> tuple:
     grand_t = sorted_dataflow[-1].timestamp - sorted_dataflow[0].timestamp
@@ -16,11 +20,12 @@ def time_weighted_mse(sorted_dataflow: list[StatFrame]) -> tuple:
     sorted_plain = [data.score_plain for data in sorted_dataflow]
     sorted_weighted = [data.score_weighted for data in sorted_dataflow]
 
-    fit_plain = numpy.polyfit(numpy.array(sorted_ts),numpy.array(sorted_plain), 1)
-    fit_weighted = numpy.polyfit(numpy.array(sorted_ts), numpy.array(sorted_weighted), 1)
+    fit_plain = curve_fit(target_log_func,sorted_ts,sorted_plain, maxfev=100000)[0]
+    fit_weighted = curve_fit(target_log_func,sorted_ts,sorted_weighted, maxfev=100000)[0]
 
     accumulated_mutation_plain = 0
     accumulated_mutation_weighted = 0
+    accumulated_offset_weighted = 0
 
     for idx,frame in enumerate(sorted_dataflow):
         if idx == 0: continue
@@ -28,8 +33,9 @@ def time_weighted_mse(sorted_dataflow: list[StatFrame]) -> tuple:
             dt = frame.timestamp - sorted_dataflow[idx-1].timestamp
             accumulated_mutation_plain += pow(abs(frame.score_plain - deduce_capped_y(frame.timestamp, fit_plain)),2) * dt
             accumulated_mutation_weighted += pow(abs(frame.score_weighted - deduce_capped_y(frame.timestamp, fit_weighted)),2) * dt
+            accumulated_offset_weighted += (frame.score_weighted - deduce_capped_y(frame.timestamp, fit_weighted)) * dt
 
-    return accumulated_mutation_weighted / grand_t, accumulated_mutation_plain / grand_t
+    return accumulated_mutation_weighted / grand_t, accumulated_mutation_plain / grand_t, accumulated_offset_weighted / grand_t
 
 def jump_rate(sorted_dataflow: list[StatFrame]) -> float:
     if len(sorted_dataflow) < 2:
@@ -107,7 +113,7 @@ def entropy_weight(data, epsilon=1e-12):
     return weights
 
 def clamp_and_sort(backward_offset:float, dataflow: list[StatFrame]) -> list[StatFrame]:
-    sorted_dataflow = sorted(dataflow, key=lambda x: x.timestamp)
+    sorted_dataflow = sorted(dataflow, key=lambda x: x.timestamp if x.timestamp != -1 else sys.maxsize)
     if backward_offset <= 0: return sorted_dataflow
 
     if sorted_dataflow[0].rated_count != 0:

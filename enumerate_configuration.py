@@ -19,7 +19,7 @@ preferred_headers = {
 
 _DEFAULT_CONFIGURATION = Configuration(
     60*5, # Change by carful!!!!!
-    1200,
+    1200+30,
     time.time() - time.time() % (60*60*24*7) + 144000,
     99999,
     6,
