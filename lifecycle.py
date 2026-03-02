@@ -3,18 +3,28 @@ import requests,time,json,pickle
 from enumerate_configuration import _DEFAULT_CONFIGURATION
 from post_processing.stat_accumu import StatFlowDataset, StatFrame
 
-def update():
+def recursive_fetching(offset: int = 0, fetch_result=None, _recursive_depth: int = 0):
+    if fetch_result is None:
+        fetch_result = []
     params = {
         "select": "*",
         "order": "created_at.desc",
-        "offset": 0,
+        "offset": offset,
         "limit": _DEFAULT_CONFIGURATION.limitN,
         "apikey": _DEFAULT_CONFIGURATION.api_key,
     }
 
-    payload = requests.get("https://bcgdqepzakcufaadgnda.supabase.co/rest/v1/preprints_with_ratings?",params=params,headers=_DEFAULT_CONFIGURATION.headers)
-    content = payload.json()
+    payload = requests.get("https://bcgdqepzakcufaadgnda.supabase.co/rest/v1/preprints_with_ratings?", params=params, headers=_DEFAULT_CONFIGURATION.headers)
+    fetch_result += payload.json()
+    offset += 1000
+    if len(fetch_result) == 1000:
+        return recursive_fetching(offset, fetch_result, _recursive_depth+1)
+    else:
+        return fetch_result, _recursive_depth
 
+def update():
+    content,depth = recursive_fetching()
+    print("Fetch complete with depth", depth,",length", len(content))
     """
     with open("stats/meta-id-refmap", 'r') as f:
         refmap: dict[str, dict] = json.loads(f.read())

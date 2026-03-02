@@ -45,5 +45,6 @@ def force_update_metadata():
 if __name__ == "__main__":
     print(os.getenv("SHIT_API_KEY"))
     print_url()
-    force_update_metadata()
+    #force_update_metadata()
+    lifecycle.update()
     #lifecycle.update()

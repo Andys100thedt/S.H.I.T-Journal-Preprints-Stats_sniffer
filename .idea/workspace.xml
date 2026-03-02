@@ -4,16 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b272ad96-1628-469c-84d1-52e2c390fcb4" name="Changes" comment="Jump rate algorithm&#10;fix. fixed a bug causing jump rate calculation counts not only increment but also decrement as positive.">
+    <list default="true" id="b272ad96-1628-469c-84d1-52e2c390fcb4" name="Changes" comment="Implementation &amp; algorithm tweaks&#10;feat.&#10;- constantly updating metainfo in `lifecycle.py` and rejecting preprints whom metainfo is not present in the latest map file to handle case of missingno or deletion after post | `post_processing.py`|.&#10;- enhanced scoring logic and algorithm | `result_algorithm.py` | `stat_accumu.py` |, using logarithmic fit curve instead of linear for time-weighted-MSE | `post_processing_utils.py`&#10;chore.&#10;- several util methods">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/enumerate_configuration.py" beforeDir="false" afterPath="$PROJECT_DIR$/enumerate_configuration.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/env_playground.py" beforeDir="false" afterPath="$PROJECT_DIR$/env_playground.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lifecycle.py" beforeDir="false" afterPath="$PROJECT_DIR$/lifecycle.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/post_processing.py" beforeDir="false" afterPath="$PROJECT_DIR$/post_processing.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/post_processing/post_playground.py" beforeDir="false" afterPath="$PROJECT_DIR$/post_processing/post_playground.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/post_processing/post_processing_utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/post_processing/post_processing_utils.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/post_processing/stat_accumu.py" beforeDir="false" afterPath="$PROJECT_DIR$/post_processing/stat_accumu.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/result_algorithm.py" beforeDir="false" afterPath="$PROJECT_DIR$/result_algorithm.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,7 +71,7 @@
       <recent name="D:\meow\shit_transfer\stats" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.post_playground">
+  <component name="RunManager" selected="Python._daemon">
     <configuration name="_daemon" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="shit_transfer" />
       <option name="ENV_FILES" value="" />
@@ -195,11 +189,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python._daemon" />
+        <item itemvalue="Python.env_playground" />
         <item itemvalue="Python.post_playground" />
         <item itemvalue="Python.result_algorithm" />
         <item itemvalue="Python.post_processing" />
-        <item itemvalue="Python.env_playground" />
-        <item itemvalue="Python._daemon" />
       </list>
     </recent_temporary>
   </component>
@@ -250,14 +244,34 @@
       <option name="project" value="LOCAL" />
       <updated>1772291252984</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Implementation &amp; algorithm tweaks&#10;feat.&#10;- constantly updating metainfo in `lifecycle.py` and rejecting preprints whom metainfo is not present in the latest map file to handle case of missingno or deletion after post | `post_processing.py`|.&#10;- enhanced scoring logic and algorithm | `result_algorithm.py` | `stat_accumu.py` |, using logarithmic fit curve instead of linear for time-weighted-MSE | `post_processing_utils.py`&#10;chore.&#10;- several util methods">
+      <option name="closed" value="true" />
+      <created>1772456009267</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1772456009268</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="init.&#10;source uploaded" />
     <MESSAGE value="Env setup&#10;feat. makes the env_playground.py generating all necessary files" />
     <MESSAGE value="Typos&#10;fix. fixed and corrected some typos and spelling issues in README.md" />
     <MESSAGE value="Jump rate algorithm&#10;fix. fixed a bug causing jump rate calculation counts not only increment but also decrement as positive." />
-    <option name="LAST_COMMIT_MESSAGE" value="Jump rate algorithm&#10;fix. fixed a bug causing jump rate calculation counts not only increment but also decrement as positive." />
+    <MESSAGE value="Implementation &amp; algorithm tweaks&#10;feat.&#10;- constantly updating metainfo in `lifecycle.py` and rejecting preprints whom metainfo is not present in the latest map file to handle case of missingno or deletion after post | `post_processing.py`|.&#10;- enhanced scoring logic and algorithm | `result_algorithm.py` | `stat_accumu.py` |, using logarithmic fit curve instead of linear for time-weighted-MSE | `post_processing_utils.py`&#10;chore.&#10;- several util methods" />
+    <option name="LAST_COMMIT_MESSAGE" value="Implementation &amp; algorithm tweaks&#10;feat.&#10;- constantly updating metainfo in `lifecycle.py` and rejecting preprints whom metainfo is not present in the latest map file to handle case of missingno or deletion after post | `post_processing.py`|.&#10;- enhanced scoring logic and algorithm | `result_algorithm.py` | `stat_accumu.py` |, using logarithmic fit curve instead of linear for time-weighted-MSE | `post_processing_utils.py`&#10;chore.&#10;- several util methods" />
   </component>
 </project>
