@@ -25,7 +25,7 @@ A project to consistently update statistics and discover the most interesting pr
 ## Usage
 
 1. **Setup your environment**
-   - Make sure you have Python installed (also see requirements).
+   - Make sure you have Python installed (also make sure you meet all dependency requirements as there are no requirements.txt).
    - Configure `enumerate_configuration.py` if you will.
    - Add an environment variable "SHIT_API_KEY" in your system's environment, apikey could be found using your own 《SHIT》 account and by packet analysis.
    - *or you can however just directly code your key string into the configuration, who cares except yourself*
