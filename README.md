@@ -52,8 +52,8 @@ A project to consistently update statistics and discover the most interesting pr
 6. **Configuration**
    - `interval: float`: interval between each `lifecycle.py` logs and write records of data into the file; default: 60*5 sec
    - `lifecycle: float`: length of period for `_daemon.py` to restart `lifecycle.py` in order to avoid increasingly high memory usage; default: 1200 sec
-   - `datetime_critical: float`: threshold for `post_processing.py` but not `lifecycle.py` to reject preprints which are published too early; default: before 00.00 UTC+8 Saturday of the last week when the configuration is loaded
-   - `limitN: int`: a parameter passed onto api call about how much pieces of preprints' data you are going to fetch in a single call; default: 99999 (this should be large)
+   - `datetime_critical: float`: threshold for `post_processing.py` but not `lifecycle.py` to reject preprints which are published too early; default: before 00.00 UTC+8 Saturday of the last week(this week if you're on Saturday or Sunday themselves) when the configuration is loaded
+   - `limitN: int`: a parameter passed onto api call about how much pieces of preprints' data you are going to fetch in a single call; default: 99999 (this should be large, but max effective is 1000 for now)
    - `count_threshold: int`: threshold of `latest_rated_count` for `post_processing.py` but not `lifecycle.py` to reject preprints with few people rated, less than but not included; default: 6
    - `apikey: str, headers: dict`: parameters passed onto api call;
 
