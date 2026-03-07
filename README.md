@@ -68,6 +68,10 @@ Or originally: Study of Higher and Inner Trash.
 A tongue-in-cheek community for all creative works.
 Website: [SHIT JOURNAL](https://shitjournal.org/)
 
+## See also
+
+Downstream project: [SSMH](https://github.com/SHIT-Journal-stats/SHIT-Journal-stats.github.io/)
+
 ---
 
 *This project is still under construction and open to *all* ideas, no matter how ridiculous!*
