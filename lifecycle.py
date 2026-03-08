@@ -30,8 +30,13 @@ def update():
         refmap: dict[str, dict] = json.loads(f.read())
     """
     refmap = {}
-    with open("stats/dataset.bin", 'rb') as f:
-        dataset: StatFlowDataset = pickle.load(f)
+    try:
+        with open("stats/dataset.bin", 'rb') as f:
+            dataset: StatFlowDataset = pickle.load(f)
+    except EOFError as ignored:
+        print("error-Dataset file corrupted, switching to the back-up file")
+        with open("stats/dataset_backup.bin", 'rb') as f:
+            dataset: StatFlowDataset = pickle.load(f)
 
     for preprints in content:
         preprint_meta: dict = preprints
@@ -54,6 +59,8 @@ def update():
 
     with open("stats/meta-id-refmap", 'w') as f:
         json.dump(refmap, f)
+    with open("stats/dataset_backup.bin", 'wb') as f:
+        pickle.dump(dataset, f)
     with open("stats/dataset.bin", 'wb') as f:
         pickle.dump(dataset, f)
 
