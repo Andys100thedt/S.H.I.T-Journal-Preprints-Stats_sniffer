@@ -59,9 +59,9 @@ def update():
 
     with open("stats/meta-id-refmap", 'w') as f:
         json.dump(refmap, f)
-    with open("stats/dataset_backup.bin", 'wb') as f:
-        pickle.dump(dataset, f)
     with open("stats/dataset.bin", 'wb') as f:
+        pickle.dump(dataset, f)
+    with open("stats/dataset_backup.bin", 'wb') as f:
         pickle.dump(dataset, f)
 
 if __name__ == '__main__':
