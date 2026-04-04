@@ -55,7 +55,6 @@ def update():
             dataset: StatFlowDataset = pickle.load(f)
 
     for preprints in content:
-        print(preprints)
         preprint_meta: dict = preprints
         preprint_id = preprint_meta["id"]
         preprint_score_plain = preprint_meta["avg_score"]
