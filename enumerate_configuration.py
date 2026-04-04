@@ -7,7 +7,8 @@ class Configuration:
     datetime_critical: float
     limitN: int
     count_threshold: int
-    api_key: str
+    api_key: str # deprecated
+    shit_articles_api_endpoint: str
     headers: dict
 
 preferred_headers = {
@@ -21,8 +22,9 @@ _DEFAULT_CONFIGURATION = Configuration(
     60*5, # Change by carful!!!!!
     1200+30,
     time.time() - time.time() % (60*60*24*7) + 144000,
-    99999,
+    50, # maximum 50
     6,
-    os.getenv("SHIT_API_KEY"),
+    os.getenv("SHIT_API_KEY"), # deprecated
+    "https://api.shitjournal.org/api/articles/",
     preferred_headers
 )

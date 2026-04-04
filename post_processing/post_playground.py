@@ -58,7 +58,7 @@ def result_outlier_culling_by_rising(path: str):
         pickle.dump(result_db,database)
 
 if __name__ == "__main__":
-    db_path = "../stats/result_database_o_-1_cp_1772454892.948831.bin"
+    db_path = "../stats/result_database_o_-1_cp_1772516670.470826.bin"
     #flow_examination("0928f19e-927f-4bd5-ad22-1bc4a9f3e37f")
     plot_results_snapshot(db_path)
     #print(id_str4id_idx(db_path, 107))

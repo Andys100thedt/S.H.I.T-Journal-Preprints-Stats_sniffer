@@ -1,30 +1,46 @@
+from typing import Tuple
+
 import requests,time,json,pickle
 
 from enumerate_configuration import _DEFAULT_CONFIGURATION
 from post_processing.stat_accumu import StatFlowDataset, StatFrame
 
-def recursive_fetching(offset: int = 0, fetch_result=None, _recursive_depth: int = 0):
-    if fetch_result is None:
-        fetch_result = []
+def recursive_fetching():
+    result,count = [],0
+    latrine = recursive_fetching_each_zone("latrine")
+    result += latrine[0]; count += latrine[1]
+    septic = recursive_fetching_each_zone("septic")
+    result += septic[0]; count += septic[1]
+    stone = recursive_fetching_each_zone("stone")
+    result += stone[0]; count += stone[1]
+    sediment = recursive_fetching_each_zone("sediment")
+    result += sediment[0]; count += sediment[1]
+
+    return result,count
+
+def recursive_fetching_each_zone(zone: str) -> Tuple[list, int]:
+
+    fetch_result = []
+
     params = {
-        "select": "*",
-        "order": "created_at.desc",
-        "offset": offset,
+        "zone": zone,
+        "sort": "newest",
+        "page": "1",
         "limit": _DEFAULT_CONFIGURATION.limitN,
-        "apikey": _DEFAULT_CONFIGURATION.api_key,
     }
 
-    payload = requests.get("https://bcgdqepzakcufaadgnda.supabase.co/rest/v1/preprints_with_ratings?", params=params, headers=_DEFAULT_CONFIGURATION.headers)
-    fetch_result += payload.json()
-    offset += 1000
-    if len(fetch_result) == 1000:
-        return recursive_fetching(offset, fetch_result, _recursive_depth+1)
-    else:
-        return fetch_result, _recursive_depth
+    payload = requests.get(_DEFAULT_CONFIGURATION.shit_articles_api_endpoint, params=params, headers=_DEFAULT_CONFIGURATION.headers)
+    fetch_respond = payload.json()
+
+    if fetch_respond["status"] == "success":
+        fetch_result += fetch_respond["data"]
+        for page_idx in range(int(fetch_respond["total_pages"])-1):
+            fetch_result += fetch_respond["data"]
+    return fetch_result, int(fetch_respond["total_pages"])
 
 def update():
-    content,depth = recursive_fetching()
-    print("Fetch complete with depth", depth,",length", len(content))
+    content,page_count = recursive_fetching()
+    print(f"Fetch complete with {page_count} pages and {len(content)} articles(preprints)")
     """
     with open("stats/meta-id-refmap", 'r') as f:
         refmap: dict[str, dict] = json.loads(f.read())
@@ -39,6 +55,7 @@ def update():
             dataset: StatFlowDataset = pickle.load(f)
 
     for preprints in content:
+        print(preprints)
         preprint_meta: dict = preprints
         preprint_id = preprint_meta["id"]
         preprint_score_plain = preprint_meta["avg_score"]

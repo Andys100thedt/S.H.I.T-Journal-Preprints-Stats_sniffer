@@ -4,8 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b272ad96-1628-469c-84d1-52e2c390fcb4" name="Changes" comment="">
+    <list default="true" id="b272ad96-1628-469c-84d1-52e2c390fcb4" name="Changes" comment="Update README.md">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/enumerate_configuration.py" beforeDir="false" afterPath="$PROJECT_DIR$/enumerate_configuration.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/env_playground.py" beforeDir="false" afterPath="$PROJECT_DIR$/env_playground.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lifecycle.py" beforeDir="false" afterPath="$PROJECT_DIR$/lifecycle.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/post_processing/post_playground.py" beforeDir="false" afterPath="$PROJECT_DIR$/post_processing/post_playground.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/result_algorithm.py" beforeDir="false" afterPath="$PROJECT_DIR$/result_algorithm.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,7 +75,7 @@
       <recent name="D:\meow\shit_transfer\stats" />
     </key>
   </component>
-  <component name="RunManager" selected="Python._daemon">
+  <component name="RunManager" selected="Python.env_playground">
     <configuration name="_daemon" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="shit_transfer" />
       <option name="ENV_FILES" value="" />
@@ -187,11 +193,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.env_playground" />
         <item itemvalue="Python._daemon" />
         <item itemvalue="Python.post_playground" />
         <item itemvalue="Python.result_algorithm" />
         <item itemvalue="Python.post_processing" />
-        <item itemvalue="Python.env_playground" />
       </list>
     </recent_temporary>
   </component>
@@ -266,7 +272,15 @@
       <option name="project" value="LOCAL" />
       <updated>1772458858421</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Update README.md">
+      <option name="closed" value="true" />
+      <created>1772516632120</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1772516632120</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -288,6 +302,7 @@
     <MESSAGE value="Implementation &amp; algorithm tweaks&#10;feat.&#10;- constantly updating metainfo in `lifecycle.py` and rejecting preprints whom metainfo is not present in the latest map file to handle case of missingno or deletion after post | `post_processing.py`|.&#10;- enhanced scoring logic and algorithm | `result_algorithm.py` | `stat_accumu.py` |, using logarithmic fit curve instead of linear for time-weighted-MSE | `post_processing_utils.py`&#10;chore.&#10;- several util methods" />
     <MESSAGE value="Recursive fetching&#10;feat. added recursive fetching with offset requests as max length one fetch=1000" />
     <MESSAGE value="Update README.md&#10;clarified a vague statement" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update README.md&#10;clarified a vague statement" />
+    <MESSAGE value="Update README.md" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update README.md" />
   </component>
 </project>
