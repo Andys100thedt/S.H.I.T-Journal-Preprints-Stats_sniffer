@@ -58,7 +58,8 @@ def update():
         preprint_meta: dict = preprints
         preprint_id = preprint_meta["id"]
         preprint_score_plain = preprint_meta["avg_score"]
-        preprint_score_weighted = preprint_meta["weighted_score"]
+        #preprint_score_weighted = preprint_meta["weighted_score"]
+        preprint_score_weighted = -1
         preprint_rated_count = preprint_meta["rating_count"]
         preprint_stat_frame = StatFrame(
             time.time(),
